@@ -5,12 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "acts_as_arter_flow_object"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{a simple flow marker for game arter in sgf.com}
+    gem.description = %Q{simple progress indicator for game arters }
     gem.email = "tim.rubist@gmail.com"
     gem.homepage = "http://github.com/tteng/acts_as_arter_flow_object"
     gem.authors = ["tim.teng"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    #gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

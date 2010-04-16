@@ -4,9 +4,9 @@ class ArterFlowObject < ActiveRecord::Base
 
   STEPS = [:design, :model, :map, :rig]
 
-  STEPS.each |s|
-    class_eval <<-EOF
-      belongs_to :#{s}_updater, :class => "User", :foreign_key => :#{s}_updater_id 
+  STEPS.each do |s|
+    self.class_eval <<-EOF
+      belongs_to :#{s}_updater, :class_name => "User", :foreign_key => :#{s}_updater_id 
     EOF
   end
 

@@ -1,6 +1,45 @@
 = acts_as_arter_flow_object
 
-Description goes here.
+= Scenario
+
+  In arters view, any character in a game has four process before it's created, desined or not, modeling? mapping? and rigged or not. They need to mark the progress of a character, 
+this gem is a simple recorder to touch and untouch each process. You also can overwrite default four steps. Enjoy.
+
+
+= Install
+
+  gem install acts_as_arter_flow_object, then in your config/environment.rb add
+
+  config.gem 'acts_as_arter_flow_object',  :version => '>=0.1.0'
+
+= Scaffold
+
+  After configuring gem, we should create a migrate file, run
+
+  script/generate acts_as_arter_flow_object
+
+  This will add a migrate file to your db/migrate directory
+
+  rake db:migrate
+
+= Models
+
+  in models which you'd like to mark as an arter flow object
+
+  class Foo < AR
+    acts_as_arter_flow_object
+  end
+
+  After Foo create a new instance, there also a new ploymorphic record will be insert into arter_flow_objects table.
+
+  To touch any process for a object:
+
+  foo = Foo.find a_id
+  foo.toggle_design!(some_arter)
+
+  Get a progress status:
+
+  foo.desined? or foo.mapped?, etc
 
 == Note on Patches/Pull Requests
  
