@@ -13,7 +13,7 @@ class ArterFlowObject < ActiveRecord::Base
   end
 
   def self.afo_types_for_select
-    find(:all, :select => "DISTINCT afoable_type").inject([]){|ary,rcd| tipe = rcd.call(:afoable_type); ary << [Kernel.const_get(tipe).human_name,tipe]}
+    find(:all, :select => "DISTINCT afoable_type").inject([]){|ary,rcd| tipe = rcd.send(:afoable_type); ary << [Kernel.const_get(tipe).human_name,tipe]}
   end
 
 end
