@@ -9,6 +9,7 @@ class ActsAsArterFlowObjectGenerator < Rails::Generator::Base
         m.migration_template 'migration.rb', 'db/migrate', 
          :assigns => { :migration_name => "CreateArterFlowObjectsTable" },
          :migration_file_name => "create_arter_flow_objects_table"
+        m.route_resources :arter_flow_objects
       end
     end
     
