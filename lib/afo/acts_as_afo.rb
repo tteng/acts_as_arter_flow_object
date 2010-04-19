@@ -23,7 +23,7 @@ module ActsAsAFO
     ArterFlowObject::STEPS.each do |s|
       module_eval <<-EOF
         def #{s}ed?
-          arter_flow_object.send(:#{s}) rescue false
+          !!arter_flow_object.send(:#{s}) rescue false
         end
 
         def toggle_#{s}!(usr)

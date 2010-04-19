@@ -9,11 +9,28 @@ class ArterFlowObject < ActiveRecord::Base
   STEPS.each do |s|
     self.class_eval <<-EOF
       belongs_to :#{s}_updater, :class_name => "User", :foreign_key => :#{s}_updater_id 
+      delegate :login, :to => :#{s}_updater, :prefix => true
     EOF
+
+    module_eval <<-MDE
+      def toggle_#{s}!(usr)
+        self.toggle #{s}
+        self.#{s}_updater = usr
+        save
+      end
+    MDE
+  end
+
+  def origin_type
+    Kernel.const_get(self.afoable_type).human_name
+  end
+
+  def origin_name
+    afoable.send(:title) rescue (afoable.send(:name) rescue 'Unknown')
   end
 
   def self.afo_types_for_select
-    find(:all, :select => "DISTINCT afoable_type").inject([]){|ary,rcd| tipe = rcd.send(:afoable_type); ary << [Kernel.const_get(tipe).human_name,tipe]}
+    find(:all, :select => "DISTINCT afoable_type").inject([]){|ary,rcd| ary << [rcd.origin_type,tipe]}
   end
 
 end
