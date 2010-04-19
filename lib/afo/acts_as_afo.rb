@@ -9,7 +9,6 @@ module ActsAsAFO
     def acts_as_arter_flow_object
       has_one :arter_flow_object, :as => :afoable, :dependent => :destroy
       include InstanceMethods
-
     end
 
   end
