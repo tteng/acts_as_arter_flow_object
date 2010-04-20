@@ -17,7 +17,7 @@ module ActsAsAFO
     
     def after_create
       super
-      create_arter_flow_objecjt
+      create_arter_flow_object
     end
 
     # lazy generating
