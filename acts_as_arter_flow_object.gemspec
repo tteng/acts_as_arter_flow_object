@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_arter_flow_object}
-  s.version = "0.2.2"
+  s.version = "0.2.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["tim.teng"]
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
      "generators/acts_as_arter_flow_object/USAGE",
      "generators/acts_as_arter_flow_object/acts_as_arter_flow_object_generator.rb",
      "generators/acts_as_arter_flow_object/templates/migration.rb",
+     "generators/acts_as_arter_flow_object/templates/models/arter_flow_object.rb",
      "lib/acts_as_arter_flow_object.rb",
      "lib/afo/acts_as_afo.rb",
      "test/helper.rb",

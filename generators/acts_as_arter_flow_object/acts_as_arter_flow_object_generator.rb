@@ -6,7 +6,8 @@ class ActsAsArterFlowObjectGenerator < Rails::Generator::Base
   def manifest
     recorded_session = record do |m|
       unless options[:skip_migration]
-        m.file "models/arter_flow_object.rb", "app/models/arter_flow_object.rb"
+        m.template "models/arter_flow_object.rb", "app/models/arter_flow_object.rb"
+        m.directory "db/migrate"
         m.migration_template 'migration.rb', 'db/migrate', 
          :assigns => { :migration_name => "CreateArterFlowObjectsTable" },
          :migration_file_name => "create_arter_flow_objects_table"
