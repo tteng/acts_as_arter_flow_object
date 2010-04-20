@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_arter_flow_object}
-  s.version = "0.2.0"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["tim.teng"]
-  s.date = %q{2010-04-19}
+  s.date = %q{2010-04-20}
   s.description = %q{simple progress indicator for game arters }
   s.email = %q{tim.rubist@gmail.com}
   s.extra_rdoc_files = [
@@ -29,7 +29,6 @@ Gem::Specification.new do |s|
      "generators/acts_as_arter_flow_object/templates/migration.rb",
      "lib/acts_as_arter_flow_object.rb",
      "lib/afo/acts_as_afo.rb",
-     "lib/afo/arter_flow_object.rb",
      "test/helper.rb",
      "test/test_acts_as_arter_flow_object.rb"
   ]
