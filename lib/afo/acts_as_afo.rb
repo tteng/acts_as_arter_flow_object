@@ -6,8 +6,10 @@ module ActsAsAFO
 
   module ClassMethods
 
-    def acts_as_arter_flow_object
-      has_one :arter_flow_object, :as => :afoable, :dependent => :destroy
+    def acts_as_arter_flow_object options={}
+      default_options = { :as => :afoable, :dependent => :destroy }  
+      default_options.merge!(options) unless options.empty?
+      has_one :arter_flow_object, default_options
       include InstanceMethods
     end
 
@@ -45,7 +47,8 @@ module ActsAsAFO
     private
 
     def create_arter_flow_object
-      arter_flow_object.create
+      p self.class
+      arter_flow_object.create 
     end
  
   end
